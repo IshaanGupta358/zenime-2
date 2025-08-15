@@ -5,7 +5,7 @@ export default async function fetchAnimeInfo(id, random = false) {
   try {
     if (random) {
       const id = await axios.get(`${api_url}/random/id`);
-      const response = await axios.get(`${api_url}/info?id=${id.data.results}`);
+      const response = await axios.get(`${api_url}/anime/${id.data.results}`);
       return response.data.results;
     } else {
       const response = await axios.get(`${api_url}/info?id=${id}`);
